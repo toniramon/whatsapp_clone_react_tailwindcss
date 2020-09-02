@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.h-128 {
+    height: 48rem;
+}
+
 /**
 Custom class here
 */

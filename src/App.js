@@ -6,10 +6,14 @@ import palette from "./assets/img/palette.jpg";
 function App() {
   return (
     <div
-      className="h-screen flex justify-center items-center"
-      style={{ backgroundImage: `url(${palette})` }}
+      className="h-screen flex flex-col justify-center items-center bg-gray-200"
+      // style={{ backgroundImage: `url(${palette})` }}
     >
-      <div className="w-9/12 h-128 rounded overflow-hidden shadow-lg p-4 bg-white">
+      <div>
+        <h1 className="text-2xl font-semibold m-8">Whatsapp Clone</h1>
+      </div>
+      {/* // Add container. // Add left side app // Add right side app */}
+      <div className="w-9/12 h-128 rounded-lg overflow-hidden shadow-xl p-4 bg-white">
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2"> React-Tailwind </div>
           <p className="text-gray-700 text-base">
@@ -26,6 +30,9 @@ function App() {
             </span>
           ))}
         </div>
+      </div>
+      <div>
+        <p className="m-8">Credits @xDylaan</p>
       </div>
     </div>
   );

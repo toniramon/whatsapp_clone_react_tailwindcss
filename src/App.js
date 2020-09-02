@@ -1,34 +1,33 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+// import logo from "./logo.svg";
 import palette from "./assets/img/palette.jpg";
 
 function App() {
   return (
     <div
-      className="h-screen flex flex-col justify-center items-center bg-gray-200"
+      className="h-screen flex flex-col justify-center items-center bg-gray-100"
       // style={{ backgroundImage: `url(${palette})` }}
     >
       <div>
         <h1 className="text-2xl font-semibold m-8">Whatsapp Clone</h1>
       </div>
-      {/* // Add container. // Add left side app // Add right side app */}
-      <div className="w-9/12 h-128 rounded-lg overflow-hidden shadow-xl p-4 bg-white">
-        <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2"> React-Tailwind </div>
-          <p className="text-gray-700 text-base">
-            A React Starter with Tailwind CSS3
-          </p>
+      <div className="w-9/12 flex flex-row h-128 rounded-lg overflow-hidden shadow-2xl bg-white border border-gray-400">
+        <div className="bg-gray-100 w-2/5 h-full">
+          <div className="bg-gray-200 p-4">header</div>
+          <div className="p-4">
+            <div>mini-search</div>
+            <div>chats</div>
+          </div>
         </div>
-        <div className="px-6 py-4">
-          {["React", "Tailwind", "Test"].map((tag) => (
-            <span
-              key={tag}
-              className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-2"
-            >
-              {"#" + tag}
-            </span>
-          ))}
+        <div className="bg-gray-100 w-3/5 h-full">
+          <div className="bg-gray-200 p-4">header</div>
+          <div
+            className="p-4 h-full"
+            style={{ backgroundImage: `url(${palette})` }}
+          >
+            <div>chat</div>
+          </div>
         </div>
       </div>
       <div>

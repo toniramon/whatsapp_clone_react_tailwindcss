@@ -34,17 +34,19 @@ class ChatInputMessage extends React.Component {
           </div>
         </div>
         <div className="w-2/12 p-4 flex justify-center">
-          <svg
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="microphone text-gray-400 w-8 h-8"
-          >
-            <path
-              fillRule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clipRule="evenodd"
-            />
-          </svg>
+          <button type="submit" className="focus:outline-none">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="microphone text-gray-400 w-8 h-8"
+            >
+              <path
+                fillRule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     );

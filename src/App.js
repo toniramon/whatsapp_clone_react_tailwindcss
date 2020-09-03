@@ -53,15 +53,22 @@ class App extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const newMessage = {
-      messageType: "sent",
-      text: this.state.currentMessage,
-      time: new Date(),
-    };
+    if (this.state.currentMessage.length !== 0) {
+      const newMessage = {
+        messageType: "sent",
+        text: this.state.currentMessage,
+        time: new Date(),
+      };
 
-    this.state.messages.push(newMessage);
-    this.setState({ currentMessage: "" });
-    document.getElementById("currentMessage").value = "";
+      this.state.messages.push(newMessage);
+      this.setState({ currentMessage: "" });
+      document.getElementById("currentMessage").value = "";
+
+      // Call for a random response after one second.
+      // setTimeout(() => {
+      //   console.log("holaaaaaaa");
+      // }, 1000);
+    }
   };
 
   render() {

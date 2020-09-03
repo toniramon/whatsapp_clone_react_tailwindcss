@@ -17,6 +17,14 @@
     display: inline-block;
 }
 
+.bg-sent-message {
+    background-color: #dcf8c7
+}
+
+.bg-whatsapp-container {
+    background-color: #ECE5DD
+}
+
 /**
 Custom class here
 */

@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 // import logo from "./logo.svg";
-import palette from "./assets/img/palette.jpg";
 
 class App extends React.Component {
   constructor() {
@@ -29,8 +28,28 @@ class App extends React.Component {
           name: "Rubypauly",
           lastMessage: "He vist un patito!!",
         },
+        {
+          name: "Magda Kraków",
+          lastMessage: "Now I'm curious!",
+        },
       ],
-      messages: [],
+      messages: [
+        {
+          messageType: "sent",
+          text: "Enviado por toni",
+          time: new Date(),
+        },
+        {
+          messageType: "received",
+          text: "Respuesta Sandrita",
+          time: new Date(),
+        },
+        {
+          messageType: "sent",
+          text: "hola probando jajaja",
+          time: new Date(),
+        },
+      ],
     };
   }
 
@@ -81,9 +100,9 @@ class App extends React.Component {
                   />
                 </div>
               </div>
-              <div className="bg-white pt-2 pr-4 h-full">
+              <div className="bg-white pr-4 h-full">
                 {this.state.contacts.map((contact) => (
-                  <div key={contact.name} className="flex flex-row">
+                  <div key={contact.name} className="flex flex-row pt-1">
                     <div className="w-1/5 px-2 py-2">
                       <img
                         src="https://randomuser.me/api/portraits/women/22.jpg"
@@ -91,7 +110,7 @@ class App extends React.Component {
                         className="rounded-full h-10 w-10 m-auto"
                       />
                     </div>
-                    <div className="w-4/5 border-b border-gray-300 pt-2 leading-tight">
+                    <div className="w-4/5 border-b border-gray-300 pt-2 pb-2 leading-tight">
                       <span>{contact.name}</span>
                       <p className=" text-gray-600 text-sm">
                         {contact.lastMessage}
@@ -104,13 +123,13 @@ class App extends React.Component {
           </div>
           <div className="bg-gray-100 w-full sm:w-3/5 h-full relative">
             <div className="bg-gray-200 flex flex-row p-2">
-              <div className="flex flex-row w-1/2 text-left">
+              <div className="flex flex-row w-1/2">
                 <img
                   src="https://images.unsplash.com/photo-1498551172505-8ee7ad69f235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
                   alt="imagen"
                   className="rounded-full h-12 w-12 ml-4"
                 />
-                <span className="pt-2 ml-4 text-lg text-left">John Doe</span>
+                <span className="pt-2 ml-4 text-lg text-left">Sandrita FP</span>
               </div>
               <div className="flex flex-row w-1/2 justify-end pr-4">
                 <div className="p-2">
@@ -154,19 +173,37 @@ class App extends React.Component {
                 </div>
               </div>
             </div>
-            <div
-              className="h-full"
-              style={{ backgroundImage: `url(${palette})` }}
-            >
+            <div className="h-full bg-whatsapp-container">
               <div className="flex flex-col-reverse w-full">
-                <div>Message 1</div>
-                <div>Message 2</div>
-                <div>Message 3</div>
-                <div>Message 4</div>
-                <div>Message 5</div>
+                {this.state.messages.map((message) => (
+                  <div
+                    key={message.time}
+                    className={
+                      message.messageType === "sent"
+                        ? "flex justify-end w-full p-2"
+                        : "flex justify-start w-full p-2"
+                    }
+                  >
+                    <div
+                      className={
+                        message.messageType === "sent"
+                          ? "bg-sent-message w-2/3 p-2 rounded-lg"
+                          : "bg-white w-2/3 p-2 rounded-lg"
+                      }
+                    >
+                      <div className="text-left w-full">
+                        {message.text},{" "}
+                        {message.time.getHours() +
+                          ":" +
+                          (message.time.getMinutes() < 10 ? "0" : "") +
+                          message.time.getMinutes()}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
               <div className="absolute flex flex-row bottom-0 w-full bg-gray-100 h-14">
-                <div className="w-2/12 p-4 text-center">
+                <div className="w-2/12 p-4 flex justify-center">
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -188,7 +225,7 @@ class App extends React.Component {
                     ></input>
                   </div>
                 </div>
-                <div className="w-2/12 p-4 text-center">
+                <div className="w-2/12 p-4 flex justify-center">
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"

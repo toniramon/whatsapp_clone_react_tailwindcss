@@ -95,12 +95,15 @@ class App extends React.Component {
 
       // Call for a random response after one second.
       const botResponse = this.state.botResponses;
-      setTimeout(() => {
-        this.state.messages.push(
-          botResponse[Math.floor(Math.random() * botResponse.length)]
-        );
-        console.log("actualizado!!");
-      }, 300);
+      this.state.messages.push(
+        botResponse[Math.floor(Math.random() * botResponse.length)]
+      );
+
+      // setTimeout(() => {
+      //   this.state.messages.push(
+      //     botResponse[Math.floor(Math.random() * botResponse.length)]
+      //   );
+      // }, 300);
       event.target.reset();
     }
 

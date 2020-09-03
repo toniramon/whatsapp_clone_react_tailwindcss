@@ -42,6 +42,38 @@ class App extends React.Component {
           time: new Date(),
         },
       ],
+      botResponses: [
+        {
+          messageType: "received",
+          text: "random message 1",
+          time: new Date(),
+        },
+        {
+          messageType: "received",
+          text: "random message 2",
+          time: new Date(),
+        },
+        {
+          messageType: "received",
+          text: "random message 3",
+          time: new Date(),
+        },
+        {
+          messageType: "received",
+          text: "random message 4",
+          time: new Date(),
+        },
+        {
+          messageType: "received",
+          text: "random message 5",
+          time: new Date(),
+        },
+        {
+          messageType: "received",
+          text: "random message 6",
+          time: new Date(),
+        },
+      ],
     };
   }
 
@@ -51,8 +83,6 @@ class App extends React.Component {
   };
 
   handleSubmit = (event) => {
-    event.preventDefault();
-
     if (this.state.currentMessage.length !== 0) {
       const newMessage = {
         messageType: "sent",
@@ -64,11 +94,18 @@ class App extends React.Component {
       this.setState({ currentMessage: "" });
       document.getElementById("currentMessage").value = "";
 
+      const botResponse = this.state.botResponses;
+
       // Call for a random response after one second.
-      // setTimeout(() => {
-      //   console.log("holaaaaaaa");
-      // }, 1000);
+      setTimeout(() => {
+        this.state.messages.push(
+          botResponse[Math.floor(Math.random() * botResponse.length)]
+        );
+      }, 300);
+      event.target.reset();
     }
+
+    event.preventDefault();
   };
 
   render() {

@@ -5,9 +5,9 @@ const ChatMessages = ({ messages }) => (
     {messages
       .slice(0)
       .reverse()
-      .map((message) => (
+      .map((message, index) => (
         <div
-          key={message.time}
+          key={index}
           className={
             message.messageType === "sent"
               ? "flex justify-end w-full p-2"

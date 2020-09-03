@@ -1,7 +1,7 @@
 import React from "react";
 
 const ChatMessages = ({ messages }) => (
-  <div className="flex flex-col-reverse w-full h-full pb-32">
+  <div className="flex flex-col-reverse w-full h-full pb-32 overflow-scroll">
     {messages
       .slice(0)
       .reverse()

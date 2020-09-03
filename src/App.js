@@ -4,7 +4,7 @@ import "./App.css";
 import Contacts from "./components/Contacts.component";
 import SearchBar from "./components/SearchBar.component";
 import ChatHeader from "./components/ChatHeader.component";
-import ChatInputMessage from "./components/ChatImputMessage.component";
+import ChatInputMessage from "./components/ChatInputMessage.component";
 import ChatMessages from "./components/ChatMessages.component";
 
 class App extends React.Component {
@@ -12,6 +12,7 @@ class App extends React.Component {
     super();
 
     this.state = {
+      currentMessage: "",
       contacts: [
         {
           name: "Bea",
@@ -33,14 +34,6 @@ class App extends React.Component {
           name: "Rubypauly",
           lastMessage: "He vist un patito!!",
         },
-        {
-          name: "Magda Kraków",
-          lastMessage: "Now I'm curious!",
-        },
-        {
-          name: "Mama",
-          lastMessage: "per favor, escura!!",
-        },
       ],
       messages: [
         {
@@ -48,29 +41,28 @@ class App extends React.Component {
           text: "Mensaje enviado por toni",
           time: new Date(),
         },
-        {
-          messageType: "received",
-          text: "Respuesta Sandrita",
-          time: new Date(),
-        },
-        {
-          messageType: "sent",
-          text: "ajsduiasdhjasudshadjksa",
-          time: new Date(),
-        },
-        {
-          messageType: "received",
-          text: "toni eres el puto amo!!",
-          time: new Date(),
-        },
-        {
-          messageType: "sent",
-          text: "hola mama",
-          time: new Date(),
-        },
       ],
     };
   }
+
+  handleMessageChange = (event) => {
+    const { value } = event.target;
+    this.setState({ currentMessage: value });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const newMessage = {
+      messageType: "sent",
+      text: this.state.currentMessage,
+      time: new Date(),
+    };
+
+    this.state.messages.push(newMessage);
+    this.setState({ currentMessage: "" });
+    document.getElementById("currentMessage").value = "";
+  };
 
   render() {
     return (
@@ -102,8 +94,10 @@ class App extends React.Component {
           <div className="bg-gray-100 w-full sm:w-3/5 h-full relative">
             <ChatHeader />
             <div className="h-full bg-whatsapp-container">
-              <ChatMessages messages={this.state.messages} />
-              <ChatInputMessage />
+              <form className="h-full" onSubmit={this.handleSubmit}>
+                <ChatMessages messages={this.state.messages} />
+                <ChatInputMessage handleChange={this.handleMessageChange} />
+              </form>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Contacts = ({ contacts }) => (
-  <div className="bg-white pr-4 h-full">
+  <div className="bg-white pr-4 h-full overflow-scroll">
     {contacts.map((contact) => (
       <div key={contact.name} className="flex flex-row pt-1">
         <div className="w-1/5 px-2 py-2">

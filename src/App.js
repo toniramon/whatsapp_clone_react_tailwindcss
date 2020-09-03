@@ -10,7 +10,7 @@ function App() {
         <h1 className="text-2xl font-semibold m-8">Whatsapp Clone</h1>
       </div>
       <div className="w-9/12 flex flex-row h-128 rounded-lg overflow-hidden shadow-2xl bg-white border border-gray-400">
-        <div className="bg-gray-100 w-2/5 h-full relative border-r">
+        <div className="bg-gray-100 w-2/5 h-full relative border-r hidden sm:block">
           <div className="bg-gray-200 flex flex-row p-2 w-full">
             <div className="w-1/2 text-left pt-3 flex flex-row">
               <div className="dot bg-red-500 m-1"></div>
@@ -33,7 +33,7 @@ function App() {
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      className="search w-6 h-6 text-gray-400"
+                      className="search w-6 h-6 text-gray-600"
                     >
                       <path
                         fillRule="evenodd"
@@ -53,7 +53,7 @@ function App() {
             <div className="bg-white p-4 h-full">sdhfjkdsfhdsjkfhdsfjkdsf</div>
           </div>
         </div>
-        <div className="bg-gray-100 w-3/5 h-full relative">
+        <div className="bg-gray-100 w-full sm:w-3/5 h-full relative">
           <div className="bg-gray-200 flex flex-row p-2">
             <div className="flex flex-row w-1/2 text-left">
               <img
@@ -68,12 +68,12 @@ function App() {
                 <svg
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  class="search w-6 h-6 text-gray-600"
+                  className="search w-6 h-6 text-gray-600"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </div>
@@ -81,12 +81,12 @@ function App() {
                 <svg
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  class="search w-6 h-6 text-gray-600"
+                  className="search w-6 h-6 text-gray-600"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </div>
@@ -94,12 +94,12 @@ function App() {
                 <svg
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  class="search w-6 h-6 text-gray-600"
+                  className="search w-6 h-6 text-gray-600"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </div>
@@ -117,11 +117,18 @@ function App() {
               <div>Message 5</div>
             </div>
             <div className="absolute flex flex-row bottom-0 w-full bg-gray-100 h-14">
-              <div className="w-2/12 pt-4 text-center">
-                {" "}
-                <span role="img" aria-label="emoji" className="h-1">
-                  &#128515;
-                </span>
+              <div className="w-2/12 p-4 text-center">
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="emoji-happy text-gray-400 w-8 h-8"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
               </div>
               <div className="w-10/12">
                 <div className="pt-3">

@@ -26,7 +26,6 @@ class ChatInputMessage extends React.Component {
             <input
               className="shadow-xs appearance-none font-light rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
               type="text"
-              id="currentMessage"
               placeholder="Type a message"
               onChange={this.handleInputChange}
               name="message"

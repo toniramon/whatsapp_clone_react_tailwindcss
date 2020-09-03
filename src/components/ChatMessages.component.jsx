@@ -22,11 +22,13 @@ const ChatMessages = ({ messages }) => (
             }
           >
             <div className="text-left w-full">
-              {message.text},{" "}
-              {message.time.getHours() +
-                ":" +
-                (message.time.getMinutes() < 10 ? "0" : "") +
-                message.time.getMinutes()}
+              <span>{message.text}</span>
+              <span className="float-right pt-2 font-normal text-xs text-gray-600">
+                {message.time.getHours() +
+                  ":" +
+                  (message.time.getMinutes() < 10 ? "0" : "") +
+                  message.time.getMinutes()}
+              </span>
             </div>
           </div>
         </div>

@@ -36,7 +36,7 @@ class App extends React.Component {
       messages: [
         {
           messageType: "sent",
-          text: "Enviado por toni",
+          text: "Mensaje enviado por toni",
           time: new Date(),
         },
         {
@@ -46,7 +46,12 @@ class App extends React.Component {
         },
         {
           messageType: "sent",
-          text: "hola probando jajaja",
+          text: "ajsduiasdhjasudshadjksa",
+          time: new Date(),
+        },
+        {
+          messageType: "received",
+          text: "toni eres el puto amo!!",
           time: new Date(),
         },
       ],
@@ -174,33 +179,36 @@ class App extends React.Component {
               </div>
             </div>
             <div className="h-full bg-whatsapp-container">
-              <div className="flex flex-col-reverse w-full">
-                {this.state.messages.map((message) => (
-                  <div
-                    key={message.time}
-                    className={
-                      message.messageType === "sent"
-                        ? "flex justify-end w-full p-2"
-                        : "flex justify-start w-full p-2"
-                    }
-                  >
+              <div className="flex flex-col-reverse w-full h-full pb-32">
+                {this.state.messages
+                  .slice(0)
+                  .reverse()
+                  .map((message) => (
                     <div
+                      key={message.time}
                       className={
                         message.messageType === "sent"
-                          ? "bg-sent-message w-2/3 p-2 rounded-lg"
-                          : "bg-white w-2/3 p-2 rounded-lg"
+                          ? "flex justify-end w-full p-2"
+                          : "flex justify-start w-full p-2"
                       }
                     >
-                      <div className="text-left w-full">
-                        {message.text},{" "}
-                        {message.time.getHours() +
-                          ":" +
-                          (message.time.getMinutes() < 10 ? "0" : "") +
-                          message.time.getMinutes()}
+                      <div
+                        className={
+                          message.messageType === "sent"
+                            ? "bg-sent-message w-2/3 p-2 rounded-lg"
+                            : "bg-white w-2/3 p-2 rounded-lg"
+                        }
+                      >
+                        <div className="text-left w-full">
+                          {message.text},{" "}
+                          {message.time.getHours() +
+                            ":" +
+                            (message.time.getMinutes() < 10 ? "0" : "") +
+                            message.time.getMinutes()}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
               <div className="absolute flex flex-row bottom-0 w-full bg-gray-100 h-14">
                 <div className="w-2/12 p-4 flex justify-center">

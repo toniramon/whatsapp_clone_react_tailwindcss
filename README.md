@@ -8,6 +8,10 @@ Tip of the day: stackblitz.com/github/GitHubUsername/RepositoryName
 
 Any advice would be appreciated or PR 👨‍💻
 
+Icons credits @heroicons https://heroicons.dev/
+
+![](https://cdn.githubraw.com/toniramon/whatsapp_clone_react_tailwindcss/e412d730/public/demo.png)
+
 --------------------------------
 --------------------------------
 --------------------------------

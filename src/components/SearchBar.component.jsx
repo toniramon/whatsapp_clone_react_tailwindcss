@@ -1,7 +1,7 @@
 import React from "react";
 
 const SearchBar = () => (
-  <div className="p-4">
+  <div className="p-4 border-b border-gray-300">
     <div className="flex flex-wrap items-stretch w-full relative">
       <div className="flex -mr-px">
         <span className="flex rounded-full items-center leading-normal text-gray-600 bg-white rounded-r-none px-3 whitespace-no-wrap">

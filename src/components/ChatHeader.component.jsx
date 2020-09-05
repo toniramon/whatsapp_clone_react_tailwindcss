@@ -8,7 +8,7 @@ const ChatHeader = () => (
         alt="imagen"
         className="rounded-full h-12 w-12 ml-4"
       />
-      <span className="pt-2 ml-4 text-lg text-left">Sandrita FP</span>
+      <span className="pt-2 ml-4 text-lg text-left">Glen Soto</span>
     </div>
     <div className="flex flex-row w-1/2 justify-end pr-4">
       <div className="p-2">

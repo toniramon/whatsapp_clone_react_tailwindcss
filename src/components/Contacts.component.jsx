@@ -1,9 +1,15 @@
 import React from "react";
 
 const Contacts = ({ contacts }) => (
-  <div className="bg-white pr-4 h-full overflow-scroll">
+  <div className="bg-white h-full overflow-scroll">
     {contacts.map((contact) => (
-      <div key={contact.name} className="flex flex-row pt-1">
+      <div
+        key={contact.name}
+        className={
+          "flex flex-row pt-1 pr-4 " +
+          (contact.name === "Glen Soto" ? "bg-gray-200" : "hover:bg-gray-100")
+        }
+      >
         <div className="w-1/5 px-2 py-2">
           <img
             src="https://randomuser.me/api/portraits/women/22.jpg"

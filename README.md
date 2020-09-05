@@ -2,7 +2,11 @@
 
 ## Made with React 16.13 and Tailwind 1.7
 
-[DEMO](https://stackblitz.com/github/toniramon/whatsapp_clone_react_tailwindcss)
+[DEMO](http://whatsapp-clone-toniramon.s3-website.eu-west-3.amazonaws.com/)
+
+Edit code online on:
+[StackBlitz](https://stackblitz.com/github/toniramon/whatsapp_clone_react_tailwindcss)
+
 
 Tip of the day: stackblitz.com/github/GitHubUsername/RepositoryName
 

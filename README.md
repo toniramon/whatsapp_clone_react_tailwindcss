@@ -1,3 +1,18 @@
+# My first React project: Whatsapp Clone.
+
+## Made with React 16.13 and Tailwind 1.7
+
+[DEMO](https://stackblitz.com/github/toniramon/whatsapp_clone_react_tailwindcss)
+
+Tip of the day: stackblitz.com/github/GitHubUsername/RepositoryName
+
+Any advice would be appreciated or PR 👨‍💻
+
+--------------------------------
+--------------------------------
+--------------------------------
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
